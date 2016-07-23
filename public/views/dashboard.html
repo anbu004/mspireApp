@@ -1,0 +1,67 @@
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+	<header class=" navbar shadow">
+		<!-- Hamburger -->
+		<button class="c-hamburger c-hamburger--htla is-active"
+			ng-click="extend()">
+			<span>toggle menu</span>
+		</button>
+
+
+		<nav class="right" style="margin-right: 20px; margin-top: 10px;">
+
+			<a href="#/dashboard/home"><md-button aria-label="Open demo menu"
+					class="nav-btn">
+				<div class="mdl-badge" data-badge="3">
+					<i class="mdi mdi-home"></i>
+
+				</div>
+				<md-tooltip md-visible="demo.showTooltip"> Home </md-tooltip> </md-button></a>
+				
+				
+			<md-menu md-position-mode="target-right target"> <md-button
+				aria-label="Open demo menu" class="nav-btn"
+				ng-click="$mdOpenMenu($event)"> <i
+				class="mdi mdi-dots-vertical"></i> </md-button> <md-menu-content width="3">
+			 <md-menu-item> <md-button>Logout</md-button>
+			</md-menu-item> </md-menu-content> </md-menu>
+		</nav>
+	</header>
+	<!-- Side bar here -->
+	<aside id="" class="sidebar">
+		<div class="top-logo">SC</div>
+
+		<div class="top-logo-extended">SC-APPS</div>
+
+		<div class="scrollbar" id="scroll">
+			<div class="dashboard-menu">
+				<ul class="menu-list">
+
+					<li ng-class="{active: $state.includes('schaumburg')}"><md-button
+							ui-sref="schaumburg" class=""> <i
+							class="mdi mdi-texture"></i> &nbsp;<span class="text">{{
+							'Create Student Detail' | translate }}</span></md-button></li>
+
+					<li ng-class="{active: $state.includes('scog')}"><md-button
+							ui-sref="scog" class=""> <i class="mdi mdi-texture"></i>
+						&nbsp;<span class="text">{{ 'View Detail' | translate }}</span></md-button></li>
+
+					<li ng-class="{active: $state.includes('COF')}"><md-button
+							ui-sref="COF" class=""> <i class="mdi mdi-texture"></i>
+						&nbsp;<span class="text">{{ 'COF Order Tracking' | translate }}</span></md-button></li>
+						
+					<li ng-class="{active: $state.includes('whereUsed')}"><md-button
+							ui-sref="whereUsed" class=""> <i class="mdi mdi-texture"></i>
+						&nbsp;<span class="text">{{ 'WhereUsed' | translate }}</span></md-button></li>
+
+				</ul>
+			</div>
+		</div>
+	</aside>
+	<main class=" content-holder">
+	<div class="page-content remodal-bg animsition"
+		ng-class="{expandedContainer: $state.includes('profile')}">
+		<!-- Your content goes here -->
+		<div ui-view></div>
+	</div>
+	</main>
+</div>

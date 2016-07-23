@@ -1,0 +1,29 @@
+
+
+<div class="mdl-cell" style="background: white;">
+	<div class="panel-header">COF Order Tracking</div>
+	    <div class="panel-body forms">
+	         <form name="form" class="css-form" novalidate>
+		         <div layout="row" layout-sm="column" layout-xs="column"class="mdl-grid">
+			         <div flex="100" flex-xs="100">
+				          <md-content layout-padding> 
+				             <span class="input-label">Enter COF Order Number</span> 
+				                 <md-input-container>
+				                     <input type="text" ng-model="cofOrderNumb" name="cofOrderNumb" ng-pattern="/^[0-9]{1,7}$/"  required=""> 
+				                             <div ng-show="form.$submitted || form.cofOrderNumb.$touched">
+		     									 <span ng-show="form.cofOrderNumb.$error.required" class="isValid">Enter COF Order Number</span>
+		     									 <span ng-show="form.cofOrderNumb.$error.pattern" class="isValid">Use Only Number Between 1 To 7!!</span>
+		   									 </div>
+				                  </md-input-container> 
+				         </md-content>
+			         </div>
+		         </div>
+		           <md-button class="md-raised md-primary" type="submit" ng-disabled="form.$invalid" ng-click="getCOFResult()"> Submit</md-button>
+		   </form>
+		  <div class=""><!-- <div class="{{element_class}}"> -->
+		  
+		        <div ui-grid="cofData" class="grid"  ui-grid-auto-resize></div>
+		        
+		  </div>
+	</div>
+</div>

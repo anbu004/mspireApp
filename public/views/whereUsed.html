@@ -1,0 +1,43 @@
+
+
+<div class="mdl-cell" style="background: white;">
+	<div class="panel-header">Where Used Report</div>
+	<div class="panel-body forms">
+		<div layout="row" layout-sm="column" layout-xs="column"
+			class="mdl-grid">
+			<div flex="25" flex-xs="100">
+				<md-content layout-padding> <md-input-container>
+				<span class="input-label">Org</span> <input type="date"
+					ng-model="whereData.org"> </md-input-container> </md-content>
+			</div>
+			<div flex="25" flex-xs="100">
+				<md-content layout-padding> <md-input-container>
+				<span class="input-label">Item</span> <input type="date"
+					ng-model="whereData.item"> </md-input-container> </md-content>
+			</div>
+			<div flex="25" flex-xs="100">
+				<md-content layout-padding> <md-input-container>
+				<span class="input-label">Bom</span>  <md-select
+					 ng-model="whereData.bom">
+				<md-option>Yes</md-option> <md-option>No</md-option> </md-select> </md-input-container> </md-content>
+			</div>
+			<div flex="25" flex-xs="100">
+				<md-content layout-padding> <md-input-container>
+				<span class="input-label">SO</span> <md-select
+					 ng-model="whereData.so">
+				<md-option>Yes</md-option> <md-option>No</md-option> </md-select> </md-input-container> </md-content>
+			</div>
+			<div flex="25" flex-xs="100">
+				<md-content layout-padding> <md-input-container>
+				<span class="input-label">PO</span> <md-select
+					 ng-model="whereData.po">
+				<md-option>Yes</md-option> <md-option>No</md-option> </md-select> </md-input-container> </md-content>
+			</div>
+		</div>
+		
+		<md-button class="md-raised md-primary" ng-click="getWhereUsedReport()"> Submit</md-button>
+		<div class="table-responsive">
+		 <div id="grid1" ui-grid="whereUsedData" ui-grid-pagination class="grid"></div></div>
+	
+	</div>
+</div>
